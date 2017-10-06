@@ -1,11 +1,11 @@
 {
 	"vsglobal":{
 		"database":{
-			"host": "ebdb.cwh4h8vwf0ow.us-west-2.rds.amazonaws.com",
+			"host": "viashotsdb.postgres.database.azure.com",
 			"port": 5432,
-			"database": "viashots",
-			"user": "viashots",
-			"password": "viashots"
+			"database": "postgres",
+			"user": "xyi@viashotsdb",
+			"password": "Selina1031!"
 		},
 		"images":{
 			"host":"https://s3-us-west-2.amazonaws.com/viashots-imgs/public/images/",
