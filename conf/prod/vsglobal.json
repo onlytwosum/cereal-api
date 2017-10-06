@@ -1,0 +1,28 @@
+{
+	"vsglobal":{
+		"database":{
+			"host": "ebdb.cwh4h8vwf0ow.us-west-2.rds.amazonaws.com",
+			"port": 5432,
+			"database": "viashots",
+			"user": "viashots",
+			"password": "viashots"
+		},
+		"images":{
+			"host":"https://s3-us-west-2.amazonaws.com/viashots-imgs/public/images/",
+			"path":{
+				"customer":"customer/",
+				"post":"post/",
+				"product":"product/"
+			},
+			"default":{
+				"album":"albuml.jpg"
+			}
+		},
+		"amazonS3":{
+			"bucket":"viashots-imgs",
+			"accessKeyId":"AKIAJA67RSE2WW6MA3TA",
+			"secretAccessKey":"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",
+			"region":"us-west-2"
+		}
+	}
+}

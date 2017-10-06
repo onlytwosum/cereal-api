@@ -1,0 +1,14 @@
+{
+	"tpservice":{
+		"weather":{
+			"url":"https://api.forecast.io/forecast/9098c7592c49f97b309ae1b943771426/"
+		},
+		"facebook":{
+			"url":"https://graph.facebook.com/me?access_token=",
+			"iconURL":"http://graph.facebook.com/{1}/picture?type=large"
+		},
+		"google":{
+			"url":"https://www.googleapis.com/oauth2/v3/tokeninfo?id_token="
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"IOS_config":{
+		"upload":{
+			"brandMaxLength": 100,
+			"productMaxLength": 500,
+			"topicMaxLength": 100,
+			"storeMaxLength": 100,
+			"placeMaxLength": 200,
+			"priceMaxLength":10,
+			"descriptionMaxLength":10000,
+			"tagMaxCount": 5
+		},
+		"thirdparty":{
+			"instagram":{
+				"usertokeneffectivedays":5
+			}
+		},
+		"static":{
+			"term":"http://www.viashots.com/privacy/"
+		}
+	}
+}
