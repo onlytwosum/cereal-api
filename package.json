@@ -3,7 +3,10 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=staging supervisor ./bin/www"
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": ">=6.9.1"
   },
   "dependencies": {
     "app-root-path": "^1.0.0",
