@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
 function: custom header
-author	: lynn
-data	: 2016-5-27
 ------------------------------------------------------------------------------------*/
 var m_customer = require('../models/m_customer');
 var logger = require('../libs/common/logger');

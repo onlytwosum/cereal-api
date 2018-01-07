@@ -1,11 +1,10 @@
 /*------------------------------------------------------------------------------------
 function: upload file
-author	: lynn
-data	: 2016-4-18
 ------------------------------------------------------------------------------------*/
 var aws = require('aws-sdk')
 var multer = require("multer");
 var multerS3 = require("multer-s3");
+var multerAzureStorage = require('multer-azure-storage');
 var nconf = require('nconf');
 
 exports.uploadImage = function(imagePath,iamgeName){
@@ -79,5 +78,22 @@ exports.uploadImageS3= function(imagePath,iamgeName){
 	});
 
 	return upload.single(iamgeName);
+};
+
+exports.uploadImageAzure = function(imagePath,iamgeName) {
+  var upload = multer({
+    storage: new multerAzureStorage({
+      azureStorageConnectionString: nconf.get('vsglobal:azureBlob:azureStorageConnectionString').toString(),
+      azureStorageAccessKey: nconf.get('vsglobal:azureBlob:azureStorageAccessKey').toString(),
+      azureStorageAccount: nconf.get('vsglobal:azureBlob:azureStorageAccount').toString(),
+      containerName: nconf.get('vsglobal:azureBlob:containerName').toString(),
+      containerSecurity: nconf.get('vsglobal:azureBlob:containerSecurity').toString(),
+      fileName: function(file) {
+        return imagePath + file.originalname;
+      }
+    })
+  });
+
+  return upload.single(iamgeName);
 };
 

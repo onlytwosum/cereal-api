@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
-function: comments moduel
-author	: lynn
-data	: 2016-3-30
+function: comments model
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var vs_util = require('../libs/common/util');

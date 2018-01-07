@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
-function: product information moduel
-author	: lynn
-data	: 2016-4-15
+function: product information model
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var db_product = require('../libs/dbconf/db_product');

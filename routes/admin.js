@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
 function: admin router 
-author	: lynn
-data	: 2016-6-23
 ------------------------------------------------------------------------------------*/
 var express = require('express');
 var router = express.Router();
@@ -12,7 +10,6 @@ router.options('/*',function(req,res,next){
 	res.status(200);
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type");
-
     next();
 });
 

@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
-function: product categroy moduel
-author	: lynn
-data	: 2016-4-11
+function: product categroy model
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var db_productCategory = require('../libs/dbconf/db_productCategory');

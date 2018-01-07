@@ -23,6 +23,13 @@
 			"accessKeyId":"AKIAJA67RSE2WW6MA3TA",
 			"secretAccessKey":"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",
 			"region":"us-west-2"
-		}
+		},
+    "azureBlob":{
+      "azureStorageConnectionString": "https://viashots.blob.core.windows.net/",
+      "azureStorageAccessKey": "ELblKdwtPOgsTOw0L1LjuZpcK78qo7FJmUAeTlwmLg7XE3RdXJuWu9qx2TOOAHV6RAAClTn7/Yhf9SOVrDgUVQ==",
+      "azureStorageAccount": "viashots",
+      "containerName": "viashots-imgs",
+      "containerSecurity": "blob"
+    }
 	}
 }

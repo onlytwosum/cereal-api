@@ -4,7 +4,7 @@ var nconf = require('../libs/common/nconf');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'viashots production' });
+  res.render('index', { title: 'Viashots API is running...' });
 });
 
 module.exports = router;

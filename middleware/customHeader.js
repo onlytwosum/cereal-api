@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
 function: custom header
-author	: lynn
-data	: 2016-5-23
 ------------------------------------------------------------------------------------*/
 exports.noCache = function(req,res,next){
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');

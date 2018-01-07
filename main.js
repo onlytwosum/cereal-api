@@ -19,6 +19,8 @@ var paramspro = require('./middleware/paramsProcessor.js');
 var customHeader = require('./middleware/customHeader.js');
 var vsAuth = require('./middleware/vsAuth.js');
 var admin = require('./routes/admin');
+//temp
+var testRoutes = require('./routes/test');
 
 var app = express();
 
@@ -52,7 +54,8 @@ app.use('/api/basic',basic);
 app.use('/api/product',product);
 app.use('/api/collection',collection);
 app.use('/admin',admin);
-
+//temp
+app.use('/test', testRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

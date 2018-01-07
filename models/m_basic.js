@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
 function: basic information moduel
-author	: lynn
-data	: 2016-4-15
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var db_basic = require('../libs/dbconf/db_basic');

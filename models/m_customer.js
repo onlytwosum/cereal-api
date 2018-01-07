@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
-function: customer moduel
-author	: lynn
-data	: 2016-4-11
+function: customer model
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var vs_util = require('../libs/common/util');

@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------------------------
-function: album moduel
-author	: lynn
-data	: 2016-4-7
+function: album model
 ------------------------------------------------------------------------------------*/
 var db = require('../libs/common/db.js');
 var db_post = require('../libs/dbconf/db_post');
