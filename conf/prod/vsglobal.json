@@ -1,10 +1,10 @@
 {
   "vsglobal":{
     "database":{
-      "host": "prod-vs-db.postgres.database.azure.com",
+      "host": "joincereal.czkwosang0ms.us-west-2.rds.amazonaws.com",
       "port": 5432,
-      "database": "postgres",
-      "user": "viashots@prod-vs-db",
+      "database": "joincereal",
+      "user": "viashots",
       "password": "Secret1031!"
     },
     "images":{
@@ -25,10 +25,10 @@
       "region":"us-west-2"
     },
     "azureBlob":{
-      "azureStorageConnectionString": "https://viashots.blob.core.windows.net/",
-      "azureStorageAccessKey": "ELblKdwtPOgsTOw0L1LjuZpcK78qo7FJmUAeTlwmLg7XE3RdXJuWu9qx2TOOAHV6RAAClTn7/Yhf9SOVrDgUVQ==",
-      "azureStorageAccount": "viashots",
-      "containerName": "viashots-imgs",
+      "azureStorageConnectionString": "https://cereal.blob.core.windows.net/",
+      "azureStorageAccessKey": "OJMhazKP340xl6GRpcanDrx4ZTHNkH+IDy1KAgk5i38SLNQQdWHNXNYM56i76+q4afrJyaN/36ygSWQVkb11ig==",
+      "azureStorageAccount": "cereal",
+      "containerName": "cereal-imgs",
       "containerSecurity": "blob"
     }
   }
