@@ -125,8 +125,8 @@ router.post('/v1/signup',function(req,res,next){
     			port: 465,
     			secure: true, // use SSL
     			auth: {
-        			user: 'viashotsdev@gmail.com',
-        			pass: 'Viashots2016'
+       	      user: 'cerealauto@gmail.com',
+              pass: 'Secret1031!'
     			}
 			});
 			var mailOptions = {
