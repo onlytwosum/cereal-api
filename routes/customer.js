@@ -121,20 +121,21 @@ router.post('/v1/signup',function(req,res,next){
 		} else{
 			//send temp password to customer's email
 			var transporter = nodemailer.createTransport({
-		 		host: 'smtp.gmail.com',
-    			port: 465,
-    			secure: true, // use SSL
-    			auth: {
+		 	    host: 'smtp.gmail.com',
+    			    port: 465,
+    			    secure: true, // use SSL
+    			    auth: {
                                	user: 'cerealauto@gmail.com',
                                 pass: 'Secret1031!'
-			});
+			    }
+                        });
 			var mailOptions = {
-    			from: 'viashotsdev@gmail.com', // sender address
-    			to: params.email, // list of receivers
-   	 			subject: 'Welcome to Viashots!', // Subject line
-    			text: 'Welcome to Viashots!', // plaintext body
-    			html: 'Dear ' + params.nickName + ', <br/> Your account has been created — now it is time to share and tag.' + 
-    			'<br/> If you have any questions, contact hello@viashots.com. <br/>--Viashots Team'
+    			    from: 'viashotsdev@gmail.com', // sender address
+    			    to: params.email, // list of receivers
+   	 	            subject: 'Welcome to Viashots!', // Subject line
+    			    text: 'Welcome to Viashots!', // plaintext body
+    			    html: 'Dear ' + params.nickName + ', <br/> Your account has been created — now it is time to share and tag.' + 
+    			    '<br/> If you have any questions, contact hello@viashots.com. <br/>--Viashots Team'
 			};
 			transporter.sendMail(mailOptions, function(error, info){
    				if(error){
