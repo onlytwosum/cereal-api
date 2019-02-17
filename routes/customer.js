@@ -952,7 +952,7 @@ router.post('/v1/profile/icon',uploader.uploadImageS3('public/images/customer/',
   //console.log(params);
     m_customer.updateCustomerProfileIcon(params)
   .then(function(data){
-    if(data[0].updatecustomerprofileicon == 1){
+    if(data[0].updatecustomerprofileicon == 1628){
       return res.status(200).json({success:true,data:"update customer icon success"});
     }else{
       return res.status(500).json({success:false,data:"update customer icon failed"});
