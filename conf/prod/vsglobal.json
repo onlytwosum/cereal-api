@@ -1,11 +1,11 @@
 {
   "vsglobal":{
     "database":{
-      "host": "joincereal.czkwosang0ms.us-west-2.rds.amazonaws.com",
+      "host": "cereal-database.postgres.database.azure.com",
       "port": 5432,
-      "database": "joincereal",
-      "user": "viashots",
-      "password": "viashots"
+      "database": "postgres",
+      "user": "cereal@cereal-database",
+      "password": "Secrect5432!"
     },
     "images":{
       "host":"https://s3-us-west-2.amazonaws.com/viashots-imgs/public/images/",
