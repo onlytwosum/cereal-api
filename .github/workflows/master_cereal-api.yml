@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'cereal-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_22A2E64C2ADF4F77A975E79DE9543FBA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_75559C5D76F7468AB3472F2B9A7E0B36 }}
           package: .
