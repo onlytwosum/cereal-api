@@ -2,10 +2,10 @@
 {
   "vsglobal":{
     "database":{
-      "host": "cerealdb.postgres.database.azure.com",
+      "host": "cereal-postgres.postgres.database.azure.com",
       "port": 5432,
-      "database": "cerealdb",
-      "user": "cerealdb@cerealdb",
+      "database": "postgres",
+      "user": "cerealdb@cereal-postgres",
       "password": "Secret54321!",
       "ssl": true
     },
