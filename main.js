@@ -18,6 +18,7 @@ var product = require('./routes/product');
 var paramspro = require('./middleware/paramsProcessor.js');
 var customHeader = require('./middleware/customHeader.js');
 var vsAuth = require('./middleware/vsAuth.js');
+var appLogger = require('./libs/common/logger');
 var admin = require('./routes/admin');
 //temp
 //var testRoutes = require('./routes/test');
@@ -65,6 +66,18 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
+// log every error that reaches the express error handler (e.g. errors
+// thrown by upload middleware that bypass a route's own .catch)
+app.use(function(err, req, res, next) {
+  if (!err.status || err.status >= 500) {
+    appLogger.error('unhandled error on ' + req.method + ' ' + req.originalUrl, {
+      message: err.message,
+      stack: err.stack
+    });
+  }
+  next(err);
+});
 
 // development error handler
 // will print stacktrace
