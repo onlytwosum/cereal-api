@@ -1,32 +1,31 @@
-
 {
-  "vsglobal":{
-    "database":{
-      "host": "cereal-postgres.postgres.database.azure.com",
+  "vsglobal": {
+    "database": {
+      "host": "localhost",
       "port": 5432,
-      "database": "postgres",
-      "user": "cerealdb@cereal-postgres",
-      "password": "Secret54321!",
-      "ssl": true
+      "database": "viashots",
+      "user": "viashots",
+      "password": "viashots",
+      "ssl": false
     },
-    "images":{
-      "host":"https://s3-us-west-2.amazonaws.com/viashots-imgs/public/images/",
-      "path":{
-        "customer":"customer/",
-        "post":"post/",
-        "product":"product/"
+    "images": {
+      "host": "https://s3-us-west-2.amazonaws.com/viashots-imgs/public/images/",
+      "path": {
+        "customer": "customer/",
+        "post": "post/",
+        "product": "product/"
       },
-      "default":{
-        "album":"albuml.jpg"
+      "default": {
+        "album": "albuml.jpg"
       }
     },
-    "amazonS3":{
-      "bucket":"viashots-imgs",
-      "accessKeyId":"AKIAJA67RSE2WW6MA3TA",
-      "secretAccessKey":"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",
-      "region":"us-west-2"
+    "amazonS3": {
+      "bucket": "viashots-imgs",
+      "accessKeyId": "AKIAJA67RSE2WW6MA3TA",
+      "secretAccessKey": "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",
+      "region": "us-west-2"
     },
-    "azureBlob":{
+    "azureBlob": {
       "azureStorageConnectionString": "https://cereal.blob.core.windows.net/",
       "azureStorageAccessKey": "OJMhazKP340xl6GRpcanDrx4ZTHNkH+IDy1KAgk5i38SLNQQdWHNXNYM56i76+q4afrJyaN/36ygSWQVkb11ig==",
       "azureStorageAccount": "cereal",

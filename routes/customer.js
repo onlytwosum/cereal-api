@@ -142,8 +142,11 @@ router.post('/v1/signup',function(req,res,next){
       };
       transporter.sendMail(mailOptions, function(error, info){
           if(error){
+            // email is fire-and-forget: the HTTP response was already sent
+            // synchronously below, so just log. Sending a response here would
+            // throw ERR_HTTP_HEADERS_SENT and crash the process.
             logger.error(error);
-            return res.status(500).json({success:false,data:error});
+            return;
           }
           //console.log('Message sent: ' + info.response);
       });
@@ -1071,8 +1074,11 @@ router.post('/v1/creator',function(req,res,next){
       };
       transporter.sendMail(mailOptions, function(error, info){
           if(error){
+            // email is fire-and-forget: the HTTP response was already sent
+            // synchronously below, so just log. Sending a response here would
+            // throw ERR_HTTP_HEADERS_SENT and crash the process.
             logger.error(error);
-            return res.status(500).json({success:false,data:error});
+            return;
           }
           //console.log('Message sent: ' + info.response);
       });
@@ -1299,8 +1305,11 @@ router.post('/v1/resetpwd',function(req,res,next){
       };
       transporter.sendMail(mailOptions, function(error, info){
           if(error){
+            // email is fire-and-forget: the HTTP response was already sent
+            // synchronously below, so just log. Sending a response here would
+            // throw ERR_HTTP_HEADERS_SENT and crash the process.
             logger.error(error);
-            return res.status(500).json({success:false,data:error});
+            return;
           }
           //console.log('Message sent: ' + info.response);
       });

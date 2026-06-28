@@ -13,6 +13,23 @@ var postIcon = nconf.get('vsglobal:images:host').toString()+nconf.get('vsglobal:
 var customerIcon = nconf.get('vsglobal:images:host').toString()+nconf.get('vsglobal:images:path:customer').toString();
 var productIcon = nconf.get('vsglobal:images:host').toString()+nconf.get('vsglobal:images:path:product').toString();
 var weatherURL = nconf.get('tpservice:weather:url').toString();
+var weatherKey = nconf.get('tpservice:weather:apikey').toString();
+var weatherUnits = nconf.get('tpservice:weather:units') ? nconf.get('tpservice:weather:units').toString() : 'imperial';
+
+/*
+Map an OpenWeatherMap icon code (e.g. "01d", "10n") to a Dark Sky-style icon
+string so existing clients that read currently.icon keep working.
+*/
+function owmIconToDarkSky(icon){
+	var map = {
+		'01d':'clear-day','01n':'clear-night',
+		'02d':'partly-cloudy-day','02n':'partly-cloudy-night',
+		'03d':'cloudy','03n':'cloudy','04d':'cloudy','04n':'cloudy',
+		'09d':'rain','09n':'rain','10d':'rain','10n':'rain','11d':'rain','11n':'rain',
+		'13d':'snow','13n':'snow','50d':'fog','50n':'fog'
+	};
+	return map[icon] || 'clear-day';
+}
 
 
 /*
@@ -262,12 +279,42 @@ a. get weather based on location
 */
 router.get('/v1/weather/',function(req,res,next){
 
-	request(weatherURL+req.query.latitude+','+req.query.longitude,function(error,response,body){
+	var url = weatherURL + '?lat=' + req.query.latitude + '&lon=' + req.query.longitude
+		+ '&units=' + weatherUnits + '&appid=' + weatherKey;
+	request(url,function(error,response,body){
 		if(!error && response.statusCode == 200){
-			var jsonbody = JSON.parse(body);
-			return res.status(200).json({"latitude":jsonbody.latitude,"longitude":jsonbody.longitude,"timezone":jsonbody.timezone,"currently":jsonbody.currently,"flags":jsonbody.flags});
+			var owm;
+			try {
+				owm = JSON.parse(body);
+			} catch (e) {
+				logger.error(e);
+				return res.status(500).json({success:false,data:"get weather failed"});
+			}
+			// remap OpenWeatherMap response into the Dark Sky-style contract the client expects
+			var w = (owm.weather && owm.weather[0]) || {};
+			var wind = owm.wind || {};
+			var clouds = owm.clouds || {};
+			var main = owm.main || {};
+			return res.status(200).json({
+				"latitude": owm.coord ? owm.coord.lat : undefined,
+				"longitude": owm.coord ? owm.coord.lon : undefined,
+				"timezone": owm.timezone, // OWM returns a UTC offset in seconds (Dark Sky returned an IANA name)
+				"currently": {
+					"time": owm.dt,
+					"summary": w.description,
+					"icon": owmIconToDarkSky(w.icon),
+					"temperature": main.temp,
+					"apparentTemperature": main.feels_like,
+					"humidity": typeof main.humidity === 'number' ? main.humidity / 100 : undefined,
+					"pressure": main.pressure,
+					"windSpeed": wind.speed,
+					"windBearing": wind.deg,
+					"cloudCover": typeof clouds.all === 'number' ? clouds.all / 100 : undefined
+				},
+				"flags": { "units": weatherUnits }
+			});
 		}else{
-			logger.error(error);
+			logger.error(error || ('weather provider returned status ' + (response && response.statusCode)));
 			return res.status(500).json({success:false,data:"get weather failed"});
 		}
 	})

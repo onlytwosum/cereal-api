@@ -11,6 +11,28 @@ Pgadmin4:\
 Create role: **viashots** with create database permission\
 Restore database based on role viashots
 
+```
+"database": {
+    "host": "ep-lively-bar-af7fhvo3.c-2.us-west-2.aws.neon.tech",
+    "port": 5432,
+    "database": "neondb",
+    "user": "neondb_owner",
+    "password": "npg_h5mdsPuQ8vog",
+    "ssl": true
+  },
+```
+
+```
+"database": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "viashots",
+    "user": "viashots",
+    "password": "viashots",
+    "ssl": false
+  },
+```
+
 # Deployment
 Azure:\
 Create app service plan\

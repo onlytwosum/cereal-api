@@ -1,7 +1,9 @@
 {
 	"tpservice":{
 		"weather":{
-			"url":"https://api.forecast.io/forecast/9098c7592c49f97b309ae1b943771426/"
+			"url":"https://api.openweathermap.org/data/2.5/weather",
+			"apikey":"403c20232e0897797a68672125e18bd5",
+			"units":"imperial"
 		},
 		"facebook":{
 			"url":"https://graph.facebook.com/me?access_token=",
