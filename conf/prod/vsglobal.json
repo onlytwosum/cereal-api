@@ -21,8 +21,8 @@
     },
     "amazonS3": {
       "bucket": "viashots-imgs",
-      "accessKeyId": "AKIAJA67RSE2WW6MA3TA",
-      "secretAccessKey": "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",
+      "accessKeyId": "AKIA6AYABO7BQGQAB4FU",
+      "secretAccessKey": "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",
       "region": "us-west-2"
     },
     "azureBlob": {
